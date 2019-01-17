@@ -1,0 +1,112 @@
+.form {
+
+  & input {
+    font-family: inherit;
+    color: inherit;
+    background-color: rgba(#fff, .5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    margin-bottom: 4px;
+    /*transition: all .3s;*/
+  }
+
+  &__forgot-password-input {
+    border-radius: 0.6rem;
+    padding: 1rem 1.6rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.6rem;
+    background-color: inherit;
+    display: block;
+    margin: auto auto 1.7rem auto;
+    width: 55%;
+  }
+
+  &__opacity {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: 3;
+    border-radius: 5px;
+    width: 40vh;
+    color: #29303b;
+
+    & input {
+      font-size: 1.5rem;
+      padding: 1.5rem 2rem;
+      border-radius: 2px;
+      display: block;
+
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  &__content {
+    padding: 1.6rem 2.5rem;
+  }
+
+  &__close {
+    position: absolute;
+    top: 4%;
+    right: 5%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: all .2s;
+
+    &:hover {
+      colour: $primaryButtonColourLighest;
+      cursor: pointer;
+    }
+  }
+
+  &__search {
+    display: block;
+
+    @mixin atMedium {
+      display: inline-block;
+    }
+
+    & input {
+      @mixin atMedium {
+        width: auto;
+      }
+
+      position: relative;
+      font-size: 1.2rem;
+      padding: 1rem;
+      width: 100%;
+      border-radius: 3.1rem;
+      background-color: #f5f8fa;
+      color: black;
+
+      &:focus {
+        background-color: white;
+        outline: 0;
+        border: 1px solid black;
+      }
+    }
+  }
+
+  &__profile-submit {
+    & textarea {
+      width: 100%;
+      border-radius: 2px;
+      border: 1px solid $primaryBorderBottomColour;
+      resize: none;
+      padding: .5rem;
+      resize: none;
+    }
+  }
+
+  &__container {
+    float: none;
+    @mixin atMedium {
+      float: right;
+    }
+  }
+
+}

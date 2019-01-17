@@ -1,0 +1,154 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  /*padding: 3rem;*/
+}
+
+a {
+  text-decoration: none;
+}
+
+.form {
+  &__header {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  &__sub-header {
+    text-align: center;
+  }
+}
+
+.error {
+  margin-top: 7rem;
+  text-align: center;
+  color: red;
+  font-size: 1.5rem;
+}
+
+.heading-primary {
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+
+  &--main {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 1.2rem;
+    font-weight: 700;
+    border: 4px solid white;
+    margin-bottom: 0.7rem;
+    padding: 1rem;
+
+    @mixin atMedium {
+      padding: 0;
+      font-size: 2.5rem;
+    }
+  }
+
+  &--sub {
+    display: block;
+    font-weight: 300;
+    font-size: 1.1rem;
+
+    @mixin atMedium {
+      font-size: 1.9rem;
+    }
+  }
+}
+
+.form-header {
+  margin-bottom: 1.3rem;
+  padding-bottom: 0.5rem;
+  /*border-bottom: 0.1px solid grey;*/
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.navbar-header {
+  color: $primaryButtonColourLighest;
+}
+
+.profile-heading {
+  font-size: 3rem;
+}
+
+.profile-subheader {
+  font-size: 1.3rem;
+}
+
+.question-item {
+  &__question {
+    color: #414141;
+    font-size: 1.3rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid $primaryBorderBottomColour;
+  }
+
+  &__answer {
+    color: #666;
+    padding: 0.7rem 0;
+    font-size: 1.2rem;
+
+    &--not-profile {
+      padding: 0;
+    }
+  }
+
+  &__postedBy {
+    color: $primaryButtonColourLighest;
+  }
+
+  &__postedTo {
+    margin-top: 1rem;
+    color: $primaryButtonColourLighest;
+  }
+}
+
+.search-items {
+  &__username {
+    display: inline-block;
+    color: $primaryButtonColourLighest;
+    font-size: 1.3rem;
+    float: left;
+  }
+
+  &__answers {
+    display: block;
+  }
+}
+
+.profile-item {
+  &__username {
+    display: inline-block;
+    color: $primaryButtonColourLighest;
+    font-size: 1.3rem;
+    float: left;
+  }
+
+  &__title {
+    padding-bottom: 0.1rem;
+    margin-bottom: 0.1rem;
+  }
+
+  &__answers {
+    display: block;
+  }
+}
+
+.like-amount {
+  position: relative;
+  font-size: 1.1rem;
+  bottom: 0.1rem;
+  margin-left: 0.3rem;
+}
+
+.happy-little-link {
+  display: block;
+  text-align: center;
+  color: #fff;
+}

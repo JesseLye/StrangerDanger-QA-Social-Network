@@ -1,0 +1,19 @@
+.search-items {
+  display: block;
+  background-color: white;
+  padding: 1.5rem;
+  /*margin-bottom: 1rem;*/
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #F2F3F5;
+  }
+
+  &:last-child {
+    margin-bottom: 3rem;
+  }
+
+  &__top-row {
+    display: block;
+    @mixin clearfix {};
+  }
+}

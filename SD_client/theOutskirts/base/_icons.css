@@ -1,0 +1,10 @@
+.isLiked {
+  font-size: 1rem;
+  &--true {
+    color: red;
+  }
+
+  &--false {
+    color: grey;
+  }
+}

@@ -1,0 +1,134 @@
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  transition: all .2s;
+  font-weight: 300;
+  /*position: relative;*/
+
+  &--border {
+    border: 1px solid white;
+    background-color: white;
+    color: black;
+    font-size: 0.8rem;
+    border-radius: 10rem;
+    padding: 1rem 2rem;
+
+    @mixin atMedium {
+      font-size: 1.3rem;
+      border-radius: 10rem;
+      padding: 1rem 3rem;
+    }
+
+    &:hover {
+      background-color: white;
+      color: #777;
+      /*transform: translateY(-5px);*/
+      box-shadow: 0 1rem 2rem rgba(#000, .2);
+      cursor: pointer;
+    }
+  }
+
+  &--authForm {
+    background-color: $primaryButtonColourLight;
+    font-size: 1.8rem;
+    color: white;
+    width: 50%;
+    border: 0;
+    border-radius: 0;
+    transition: all .3s;
+    padding: 1rem 3rem;
+
+    &:hover {
+      transform: translateY(-5px);
+      background-color: $primaryButtonColourLighest;
+      box-shadow: 0rem 1rem 2rem rgba(#000, .2);
+    }
+
+    &:active {
+      background-color: $primaryButtonColourDark;
+      transform: translateY(2px);
+    }
+  }
+
+  &--search-form {
+    float: right;
+    padding: 0.6rem 1rem;
+    margin-top: 0.7rem;
+    margin-right: 0.5rem;
+    background: transparent;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  &--profile-submit {
+    float: right;
+    margin-top: 1rem;
+    background: transparent;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+    color: $primaryButtonColourLighest;
+
+    &:hover {
+      color: $primaryButtonColourDark;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--margin-right {
+    margin-right: 2rem;
+  }
+
+  &--delete {
+    cursor: pointer;
+    margin-right: 2rem;
+
+    &:hover {
+      color: red;
+    }
+  }
+
+  &--profile-follow {
+    border: 1px solid white;
+    margin-top: 0.3rem;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    transition: all .2s;
+  }
+
+  &--search-items {
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+  }
+
+  &--follow-pannel {
+    padding: 1rem 2rem 1rem 0rem;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+  }
+
+  &__forgot-password-submit {
+    font-size: 1.7rem;
+    background-color: $primaryButtonColourLighest;
+    color: white;
+    border: 0;
+    border-radius: 0;
+    transition: all .3s;
+    padding: 0.8rem 3rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.8rem;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 1rem 2rem rgba(#000, .2);
+    }
+
+    &:disabled {
+      background-color: $primaryButtonColourDark;
+    }
+  }
+}

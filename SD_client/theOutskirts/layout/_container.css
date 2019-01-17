@@ -1,0 +1,19 @@
+.container {
+  margin: 0;
+
+  @mixin atMedium {
+    margin: auto 5rem;
+  }
+
+  @mixin atLarge {
+    margin: auto 25rem;
+  }
+
+  @mixin atHuge {
+    margin: auto 45rem;
+  }
+
+  @mixin atAbsoluteUnit {
+    margin: auto 52rem;
+  }
+}

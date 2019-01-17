@@ -1,0 +1,13 @@
+.profile-item {
+  background-color: white;
+  padding: 1.5rem;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #F2F3F5;
+  }
+
+  &__top-row {
+    display: block;
+    @mixin clearfix {};
+  }
+}

@@ -1,0 +1,31 @@
+.u-center-text {
+  text-align: center;
+}
+
+.u-cursor-pointer {
+  cursor: pointer;
+}
+
+.u-display-inline-block {
+  display: inline-block;
+}
+
+.u-display-block {
+  display: block;
+}
+
+.u-margin-top-small {
+  margin-top: 1.3rem;
+}
+
+.u-margin-top-regular {
+  margin-top: 2.7rem;
+}
+
+.u-margin-top-beefy {
+  margin-top: 14.5rem;
+
+  @mixin atMedium {
+    margin-top: 7.2rem;
+  }
+}

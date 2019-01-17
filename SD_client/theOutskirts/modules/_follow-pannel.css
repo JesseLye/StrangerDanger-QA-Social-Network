@@ -1,0 +1,23 @@
+.follow-pannel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 25vh;
+
+  &__item {
+    padding: 0.7rem;
+    display: block;
+    border-bottom: 1px solid $primaryBorderBottomColour;
+    @mixin clearfix {};
+  }
+
+  &__username {
+    float: left;
+    display: inline-block;
+    padding: 1rem 4rem 1rem 2rem;
+  }
+}

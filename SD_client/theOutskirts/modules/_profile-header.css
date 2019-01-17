@@ -1,0 +1,16 @@
+.profile-header {
+  margin-top: 14.5rem;
+
+  @mixin atMedium {
+    margin-top: 8rem;
+  }
+
+  text-align: center;
+  border-radius: 5px;
+  padding: 5rem;
+  color: #fff;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($primaryColourLight, 0.9),
+    rgba($primaryColourDark, 0.9));
+}
