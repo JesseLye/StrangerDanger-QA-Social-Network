@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { authUser } from "../store/actions/auth";
-import { removeError } from "../store/actions/errors";
+import { removeErrorAuth } from "../store/actions/authErrors";
 import { Link } from "react-router-dom";
 import AuthForm from "../components/AuthForm";
 
@@ -19,15 +19,15 @@ class LandingPage extends Component {
   }
 
   render() {
-    const { authUser, errors, removeError } = this.props;
+    const { authUser, authErrors, removeErrorAuth } = this.props;
 
     return (
       <header className="header">
         {this.state.signInForm && (
-          <AuthForm removeError={removeError} errors={errors} onAuth={authUser} buttonText="Log In" heading="Welcome Back" {...this.props} resetFunc={this.resetState} />
+          <AuthForm removeError={removeErrorAuth} errors={authErrors} onAuth={authUser} buttonText="Log In" heading="Welcome Back" {...this.props} resetFunc={this.resetState} />
         )}
         {this.state.signUpForm && (
-          <AuthForm removeError={removeError} errors={errors} onAuth={authUser} signUp buttonText="Sign up" heading="Join StrangerDanger" {...this.props} resetFunc={this.resetState} />
+          <AuthForm removeError={removeErrorAuth} errors={authErrors} onAuth={authUser} signUp buttonText="Sign up" heading="Join StrangerDanger" {...this.props} resetFunc={this.resetState} />
         )}
         <div className="header__text-box">
           <div className="u-center-text">
@@ -49,8 +49,8 @@ class LandingPage extends Component {
 
 function mapStateToProps(state) {
   return {
-    errors: state.errors
+    authErrors: state.authErrors
   };
 }
 
-export default withRouter(connect(mapStateToProps, { authUser, removeError })(LandingPage));
+export default withRouter(connect(mapStateToProps, { authUser, removeErrorAuth })(LandingPage));

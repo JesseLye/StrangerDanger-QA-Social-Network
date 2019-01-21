@@ -721,19 +721,18 @@ a {
     border-radius: 0;
     transition: all .3s;
     padding: 1rem 3rem;
+
+    /*&:active {
+      background-color: $primaryButtonColourDark;
+      transform: translateY(2px);
+    }*/
   }
 
 .btn--authForm:hover {
-      -webkit-transform: translateY(-5px);
-              transform: translateY(-5px);
-      background-color: #3aaaf4;
-      box-shadow: 0rem 1rem 2rem rgba(0,0,0, .2);
-    }
-
-.btn--authForm:active {
+      /*transform: translateY(-5px);*/
       background-color: #2981bc;
-      -webkit-transform: translateY(2px);
-              transform: translateY(2px);
+      box-shadow: 0rem 1rem 2rem rgba(0,0,0, .2);
+      cursor: pointer;
     }
 
 .btn--search-form {
