@@ -122,7 +122,7 @@ class FeedItems extends Component {
   render() {
     const { feed, randomProfiles, currentUser } = this.props;
     let feedList = "Huh?";
-    let likesList = "Nothing here!";
+    let likesList = "Nuffin' yet";
     let randomProfilesList = "Either something went wrong or you're following everybody. You mad lad!";
 
     if(this.state.feed.length > 0){
@@ -179,25 +179,25 @@ class FeedItems extends Component {
     return (
       <div>
         {this.props.error.message &&
-          <h1>{this.props.error.message}</h1>
+          <div className="error-container">
+            <p className="error">{this.props.error.message}</p>
+          </div>
         }
-        <div>
-          {this.state.likesModule && (
-            <div className="modal" onClick={this.modalClick}>
-              <div className="follow-pannel">
-                {likesList}
-              </div>
+        {this.state.likesModule && (
+          <div className="modal" onClick={this.modalClick}>
+            <div className="follow-pannel">
+              {likesList}
             </div>
+          </div>
           )}
-          <div className="container">
-            <div className="u-margin-top-beefy">
-              <div className="row row--gutters">
-                <div className="row__medium-4" style={{marginBottom: "3.5rem"}}>
-                  {randomProfilesList}
-                </div>
-                <div className="row__medium-8">
-                  {feedList}
-                </div>
+        <div className="container">
+          <div className="u-margin-top-beefy">
+            <div className="row row--gutters">
+              <div className="row__medium-4" style={{marginBottom: "3.5rem"}}>
+                {randomProfilesList}
+              </div>
+              <div className="row__medium-8">
+                {feedList}
               </div>
             </div>
           </div>

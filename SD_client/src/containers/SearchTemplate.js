@@ -98,7 +98,7 @@ class SearchTemplate extends Component {
   render() {
     const { currentUser } = this.props;
 
-    let searchResults =  "Nothing here!";
+    let searchResults = [];
 
     if("results" in this.props.results){
       if(this.props.currentUser.isAuthenticated){
@@ -128,6 +128,10 @@ class SearchTemplate extends Component {
           />
         );
       }
+    };
+
+    if(searchResults.length === 0){
+      searchResults = "Nuffin' yet";
     }
 
     return (

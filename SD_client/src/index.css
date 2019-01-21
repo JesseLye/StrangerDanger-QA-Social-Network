@@ -500,6 +500,19 @@ a {
     display: block;
   }
 
+.error {
+  color: red;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 865px) {
+
+.error {
+    font-size: 1.4rem
+}
+  }
+
 .like-amount {
   position: relative;
   font-size: 1.1rem;
@@ -1250,3 +1263,10 @@ a {
     clear: both;
     display: table;
   }
+
+.error-container {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}

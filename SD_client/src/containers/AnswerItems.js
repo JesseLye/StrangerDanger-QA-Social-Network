@@ -118,7 +118,7 @@ class AnswerItems extends Component {
 
   render() {
     const { currentUser, randomProfiles, answersReceived } = this.props;
-    let answersList = "Huh?";
+    let answersList = "Nuffin' yet";
     let likesList = "Nothing here!";
     let randomProfilesList = "Either something went wrong or you're following everybody. You mad lad!";
 
@@ -176,9 +176,11 @@ class AnswerItems extends Component {
     return (
       <div>
         {this.props.error.message &&
-          <h1>{this.props.error.message}</h1>
+          <div className="error-container">
+            <p className="error">{this.props.error.message}</p>
+          </div>
         }
-        <div>
+
           {this.state.likesModule && (
             <div className="modal" onClick={this.modalClick}>
               <div className="follow-pannel">
@@ -186,15 +188,14 @@ class AnswerItems extends Component {
               </div>
             </div>
           )}
-          <div className="container">
-            <div className="u-margin-top-beefy">
-              <div className="row row--gutters">
-                <div className="row__medium-4" style={{marginBottom: "3.5rem"}}>
-                  {randomProfilesList}
-                </div>
-                <div className="row__medium-8">
-                  {answersList}
-                </div>
+        <div className="container">
+          <div className="u-margin-top-beefy">
+            <div className="row row--gutters">
+              <div className="row__medium-4" style={{marginBottom: "3.5rem"}}>
+                {randomProfilesList}
+              </div>
+              <div className="row__medium-8">
+                {answersList}
               </div>
             </div>
           </div>

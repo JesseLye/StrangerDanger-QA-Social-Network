@@ -68,8 +68,11 @@ class DashboardQuestions extends Component {
     return (
       <div>
         {this.props.error.message &&
-          <h1>{this.props.error.message}</h1>
+          <div className="error-container">
+            <p className="error">{this.props.error.message}</p>
+          </div>
         }
+
         <div className="container">
           <div className="u-margin-top-beefy">
             <div onClick={this.selectQuestion}>

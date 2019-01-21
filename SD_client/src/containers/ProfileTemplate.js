@@ -315,7 +315,7 @@ class ProfileTemplate extends Component {
         questionList = questions.questionsReceived.map((q, i) => (
           <QuestionItem
             key={q._id}
-            id={q.postedTo._id}
+            id={q.postedBy ? q.postedBy._id : null}
             date={q.answer.createdAt}
             text={q.text}
             postedBy={q.postedBy ? q.postedBy.username : "Anonymous"}
@@ -334,7 +334,9 @@ class ProfileTemplate extends Component {
       <div>
         <Navbar />
         {this.props.error.message && (
-          <h1>{this.props.error.message}</h1>
+          <div className="error-container">
+            <p className="error">{this.props.error.message}</p>
+          </div>
         )}
 
         {this.state.followersModule && (

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { logout, authUser } from "../store/actions/auth";
 import { loadAnswers } from "../store/actions/answersReceived";
 import { loadSearch } from "../store/actions/searchResults";
-import { removeError } from "../store/actions/errors";
+import { removeErrorAuth } from "../store/actions/authErrors";
 import AuthForm from "../components/AuthForm";
 import SubmitForm from "../components/SubmitForm";
 
@@ -44,13 +44,13 @@ class Navbar extends Component {
   };
 
   render() {
-    const { authUser, errors, removeError } = this.props;
+    const { authUser, authErrors, removeErrorAuth } = this.props;
 
     return (
       <div>
         {this.state.signInForm && (
-          <AuthForm removeError={removeError}
-                    errors={errors}
+          <AuthForm removeError={removeErrorAuth}
+                    errors={authErrors}
                     onAuth={authUser}
                     buttonText="Log In"
                     heading="Welcome Back"
@@ -60,8 +60,8 @@ class Navbar extends Component {
         )}
 
         {this.state.signUpForm && (
-          <AuthForm removeError={removeError}
-                    errors={errors} onAuth={authUser}
+          <AuthForm removeError={removeErrorAuth}
+                    errors={authErrors} onAuth={authUser}
                     signUp
                     buttonText="Sign me up!"
                     heading="Join StrangerDanger"
@@ -88,8 +88,8 @@ class Navbar extends Component {
                   <Link to={`/user/${this.props.currentUser.user.id}`} className={`/user/${this.props.currentUser.user.id}` === this.props.location.pathname ? "navbar__link navbar__link--margin-left navbar__link--is-selected" : "navbar__link navbar__link--margin-left navbar__link"}>
                     Profile
                   </Link>
-                  <Link to={"/notifications"} className={this.props.location.pathname === "/notifications" ? "navbar__link navbar__link--margin-left navbar__link--is-selected" : "navbar__link navbar__link--margin-left navbar__link"}>
-                    Notifications
+                  <Link to={"/answers"} className={this.props.location.pathname === "/answers" ? "navbar__link navbar__link--margin-left navbar__link--is-selected" : "navbar__link navbar__link--margin-left navbar__link"}>
+                    Answers
                   </Link>
                   <Link to={"/feed"} className={this.props.location.pathname === "/feed" ? "navbar__link navbar__link--margin-left navbar__link--is-selected" : "navbar__link navbar__link--margin-left navbar__link"}>
                     Social
@@ -117,8 +117,8 @@ function mapStateToProps(state) {
     searchResults: state.searchResults,
     question: state.question,
     answersReceived: state.answersReceived,
-    errors: state.errors
+    authErrors: state.authErrors
   };
 }
 
-export default withRouter(connect(mapStateToProps, { logout, loadSearch, authUser, loadAnswers, removeError })(Navbar));
+export default withRouter(connect(mapStateToProps, { logout, loadSearch, authUser, loadAnswers, removeErrorAuth })(Navbar));

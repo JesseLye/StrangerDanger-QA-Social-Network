@@ -23,7 +23,7 @@ const Main = props => {
         <Route exact path="/reset/forgotPassword" render={props => <ForgotPasswordForm {...props} /> } />
         <Route exact path="/reset/:token" render={props => <ResetPasswordForm {...props} /> } />
         <Route exact path="/feed" render={props => <WithAuth currentUser={currentUser} RenderComponent={FeedItems} /> } />
-        <Route exact path="/notifications" render={props => <WithAuth currentUser={currentUser} RenderComponent={AnswerItems} /> } />
+        <Route exact path="/answers" render={props => <WithAuth currentUser={currentUser} RenderComponent={AnswerItems} /> } />
         <Route exact path="/user/:id" render={props => <ProfileTemplate {...props} />} />
         <Route exact path="/search" render={props => <SearchTemplate {...props} />} />
         <Route render={() => <RouteNotFound />} />
