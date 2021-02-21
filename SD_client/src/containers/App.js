@@ -16,9 +16,13 @@ if(localStorage.jwtToken) {
   try {
     (async function(){
       let decoded = jwtDecode(localStorage.jwtToken);
-      let getFollowData = await apiCall("GET", "/api/auth/followData");
-      decoded["profileFollowing"] = getFollowData[0].profileFollowing.slice();
-      store.dispatch(setCurrentUser(decoded));
+      // additional check to see if the user is authed
+      let getUser = await apiCall("GET", "/api/auth/isAuthed");
+      if (!!getUser && getUser.length > 0) {
+        let getFollowData = await apiCall("GET", "/api/auth/followData");
+        decoded["profileFollowing"] = getFollowData[0].profileFollowing.slice();
+        store.dispatch(setCurrentUser(decoded));
+      }
     })();
   } catch(e) {
     store.dispatch(setCurrentUser({}));
