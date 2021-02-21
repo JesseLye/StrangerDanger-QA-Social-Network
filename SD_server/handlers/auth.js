@@ -78,3 +78,16 @@ exports.getFollow = async function(req, res, next) {
     return next(err);
   }
 }
+
+exports.isAuthed = async function(req, res, next) {
+  try {
+    const token = req.headers.authorization.split(" ")[1];
+    var decoded = jwt.verify(token, process.env.SECRET_KEY);
+
+    let foundUser = await db.User.find({"_id": decoded.id}, "profileFollowing");
+    
+    return res.status(200).json(foundUser);
+  } catch (err) {
+    return next(err);
+  }
+}
